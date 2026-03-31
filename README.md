@@ -65,7 +65,7 @@ Bridge the gap between digital simulation and the physical world.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/bhuvncodes/hiaime.git
+   git clone https://github.com/bhuvncodes/hiaime.git](https://github.com/saivardhan1245/decision-simulation-engine.git
    ```
 
 2. **Install dependencies:**
