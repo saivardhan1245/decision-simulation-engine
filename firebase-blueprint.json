@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user in the multiplayer simulation.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["founder", "customer", "investor"] },
+        "sessionId": { "type": "string" }
+      },
+      "required": ["uid", "displayName"]
+    },
+    "GameSession": {
+      "title": "GameSession",
+      "description": "A multiplayer game session.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "problemId": { "type": "string" },
+        "status": { "type": "string", "enum": ["lobby", "pitching", "negotiating", "launching", "finished"] },
+        "problem": { "type": "string" },
+        "pitch": { "type": "string" },
+        "fundingStatus": { "type": "string" },
+        "dealTerms": { "type": "object" },
+        "customerRating": { "type": "number" },
+        "logs": { "type": "array", "items": { "type": "object" } },
+        "participants": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["id", "status"]
+    }
+  },
+  "firestore": {
+    "/sessions/{sessionId}": {
+      "schema": "GameSession",
+      "description": "Multiplayer game sessions."
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    }
+  }
+}

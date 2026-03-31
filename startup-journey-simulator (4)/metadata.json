@@ -1,0 +1,5 @@
+{
+  "name": "Startup Journey Simulator",
+  "description": "A real-time multiplayer simulation where users act as founders, customers, and investors to build and fund startups, evaluated by AI.",
+  "requestFramePermissions": []
+}
